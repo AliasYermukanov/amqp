@@ -9,9 +9,9 @@ AMQP binding implementing Client-Server and Publisher-Consumer paradigms
     
     import (
         "fmt"
-        "github.com/djumanoff/amqp"
+        "github.com/AliasYermukanov/amqp"
     )
-    
+
     var cfg = amqp.Config{
         Host: "localhost",
         VirtualHost: "",
@@ -66,7 +66,7 @@ AMQP binding implementing Client-Server and Publisher-Consumer paradigms
         
     import (
     	"fmt"
-    	"github.com/djumanoff/amqp"
+    	"gitlab.alfa-bank.kz/aset/tools/amqp"
     )
     
     var cfg = amqp.Config{

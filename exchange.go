@@ -7,22 +7,22 @@ type (
 		Name string
 		Kind string
 
-		Durable bool
+		Durable    bool
 		AutoDelete bool
-		Internal bool
-		NoWait bool
-		Args amqp.Table
-		Passive bool
+		Internal   bool
+		NoWait     bool
+		Args       amqp.Table
+		Passive    bool
 
 		Bindings []ExchangeBinding
 	}
 
 	ExchangeBinding struct {
-		Source string
-		RoutingKey string
+		Source      string
+		RoutingKey  string
 		Destination string
 
 		NoWait bool
-		Args amqp.Table
+		Args   amqp.Table
 	}
 )

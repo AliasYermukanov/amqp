@@ -1,8 +1,8 @@
 package amqp
 
 import (
-	"strconv"
 	"math/rand"
+	"strconv"
 )
 
 const (

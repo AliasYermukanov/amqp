@@ -14,7 +14,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 )
-
+//test
 // Errors
 var (
 	ErrRpcTimeout          = errors.New("RPC timeout")
@@ -82,7 +82,7 @@ func NewSession(cfg Config) Session {
 	rand.Seed(time.Now().UTC().UnixNano())
 
 	return &session{
-		cfg:   cfg,
+		cfg:     cfg,
 		closeCh: make(chan bool),
 
 		servers: []*server{},
@@ -146,14 +146,16 @@ func (sess *session) createServer(cfg ServerConfig) (*server, error) {
 	}
 
 	srv := &server{
-		sess:      sess,
-		responseX: cfg.ResponseX,
-		requestX:  cfg.RequestX,
-		qs:        []*Queue{},
-		xs:        []*Exchange{},
-		close:     make(chan bool),
-		sen:       sen,
-		rec:       rec,
+		sess:           sess,
+		responseX:      cfg.ResponseX,
+		requestX:       cfg.RequestX,
+		qs:             []*Queue{},
+		xs:             []*Exchange{},
+		close:          make(chan bool),
+		sen:            sen,
+		rec:            rec,
+		unbindExAtStop: cfg.UnbindExAtStop,
+		unbindQsAtStop: cfg.UnbindQsAtStop,
 	}
 
 	senCh := sen.NotifyClose(make(chan *amqp.Error))

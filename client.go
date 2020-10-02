@@ -3,8 +3,8 @@ package amqp
 import (
 	"time"
 
-	"github.com/streadway/amqp"
 	"fmt"
+	"github.com/streadway/amqp"
 	"sync"
 )
 
@@ -39,7 +39,7 @@ type (
 		responseQ string
 
 		rpcChannelsMu sync.RWMutex
-		rpcChannels map[string]chan Message
+		rpcChannels   map[string]chan Message
 
 		close chan bool
 	}
